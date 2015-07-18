@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa1e692e-d60f-438f-bf59-826b4bd7be56" name="Default" comment="" />
+    <list default="true" id="aa1e692e-d60f-438f-bf59-826b4bd7be56" name="Default" comment="Added features, cleaned up structure:&#10;* Added improved visualization (need better assets)&#10;* Added initial support for ultrasonics (more like LIDAR really)&#10;* Added teleop controlled robot for testing ultrasonics">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/frc.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/frc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/tank.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/tankCannon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/AnimatedBox2DSprite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/AnimatedSprite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/assets/AnnotationAssetManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/Appender.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/ArrayPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/ArrayPools.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/ArrayUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/ArrayUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/math/BayazitDecomposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/BiFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/Box2DMapObjectParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/Box2DPolygonSprite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/Box2DSprite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/Box2DUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/Breakable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/Chain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/CharSequenceInterpolator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/CircularGroup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/ContactAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/ContactMultiplexer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/CutsceneManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/DualIntMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/DualObjectMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/EventMultiplexer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/FileChooser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/FloatArrayPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/Function.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/math/GeometryUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/math/GeometryUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/IntArrayPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/math/InterpolationUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/JigsawPuzzle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/ListFileChooser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/maps/MapUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/math/MathUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/math/MathUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/MouseJointAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/Multiplexer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/math/Noise.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/Pair.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/utils/PolygonRegionDrawable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/Popup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/PositionController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/utils/ReflectionArrayPool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/RotationController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/Scene2DUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/ScrollPaneSnapAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/utils/StringUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TeleopRobot.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/maps/tiled/TileAnimator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/maps/tiled/TmxMapWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/TreeFileChooser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/Typewriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/scenes/scene2d/ui/UIUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Ultrasonic.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/WorldObserver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java" afterPath="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robowar.ipr" afterPath="$PROJECT_DIR$/robowar.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robowar.iws" afterPath="$PROJECT_DIR$/robowar.iws" />
+    </list>
     <ignored path="robowar.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -69,27 +136,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RoboWar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RoboWar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.851272">
-              <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
               <folding>
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1320#1321#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollisionDetect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/CollisionDetect.java">
+      <file leaf-file-name="Ultrasonic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Ultrasonic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.76209676">
+              <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,34 +175,44 @@
         <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#275#276#0" expanded="true" />
-                <element signature="e#311#312#0" expanded="true" />
-                <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
-                <element signature="e#1160#1161#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1274#1275#0" expanded="true" />
-                <element signature="e#1322#1323#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Entity.java">
+      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleRobot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeleopRobot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TeleopRobot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,69 +223,17 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="false" />
+                <element signature="e#447#448#0" expanded="false" />
+                <element signature="e#492#493#0" expanded="false" />
+                <element signature="e#530#531#0" expanded="false" />
+                <element signature="e#564#565#0" expanded="false" />
+                <element signature="e#595#596#0" expanded="false" />
+                <element signature="e#642#643#0" expanded="false" />
+                <element signature="e#682#683#0" expanded="false" />
+                <element signature="e#2116#2117#0" expanded="false" />
+                <element signature="e#2179#2180#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RobotFeature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotFeature.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-              <folding>
-                <element signature="e#277#304#0" expanded="true" />
-                <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#393#420#0" expanded="true" />
-                <element signature="e#478#505#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RobotDefinition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#890#917#0" expanded="true" />
-                <element signature="e#1568#1569#0" expanded="true" />
-                <element signature="e#1596#1597#0" expanded="true" />
-                <element signature="e#1628#1629#0" expanded="true" />
-                <element signature="e#1657#1658#0" expanded="true" />
-                <element signature="e#2579#2580#0" expanded="true" />
-                <element signature="e#2606#2607#0" expanded="true" />
-                <element signature="e#2747#2748#0" expanded="true" />
-                <element signature="e#2781#2782#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleRobot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -211,6 +246,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -225,13 +263,17 @@
         <option value="$PROJECT_DIR$/desktop/src/com/lightningrobotics/robowar/desktop/DesktopLauncher.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotFeature.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java" />
-        <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Entity.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/CollisionDetect.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TankDrive.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotDefinition.java" />
+        <option value="$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/WorldObserver.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java" />
         <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TeleopRobot.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Ultrasonic.java" />
       </list>
     </option>
   </component>
@@ -263,7 +305,7 @@
       <profile-state />
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -357,14 +399,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dermetfan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robowar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robowar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dermetfan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robowar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robowar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="robowar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -377,16 +467,23 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="sim&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/SimpleRobot.java&#10;deskjava&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/desktop/src/com/lightningrobotics/robowar/desktop/DesktopLauncher.java&#10;rowjava&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/RoboWar.java" />
+    <property name="SearchEverywhereHistoryKey" value="drive&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/TankDrive.java&#10;con&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/Constants.java&#10;sim&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/SimpleRobot.java&#10;ass&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/Assets.java&#10;deskjava&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/desktop/src/com/lightningrobotics/robowar/desktop/DesktopLauncher.java&#10;rowjava&#9;FILE&#9;file:///Users/phurley/code/projects/robowar/core/src/com/lightningrobotics/robowar/RoboWar.java" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/robowar.ipr" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lightningrobotics.robowar" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Desktop">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -669,11 +766,17 @@
       <updated>1436988991369</updated>
       <workItem from="1436988989109" duration="5006000" />
       <workItem from="1437003350222" duration="24126000" />
+      <workItem from="1437159015325" duration="6273000" />
+      <workItem from="1437228753597" duration="2122000" />
+      <workItem from="1437237915295" duration="102000" />
+      <workItem from="1437238502238" duration="86000" />
+      <workItem from="1437242856533" duration="341000" />
+      <workItem from="1437243217433" duration="3460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29132000" />
+    <option name="totallyTimeSpent" value="41516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -689,15 +792,15 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18472221" sideWeight="0.5064935" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18472221" sideWeight="0.5335821" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18472221" sideWeight="0.4935065" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18454936" sideWeight="0.4664179" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19651741" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -718,11 +821,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added features, cleaned up structure:&#10;* Added improved visualization (need better assets)&#10;* Added initial support for ultrasonics (more like LIDAR really)&#10;* Added teleop controlled robot for testing ultrasonics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added features, cleaned up structure:&#10;* Added improved visualization (need better assets)&#10;* Added initial support for ultrasonics (more like LIDAR really)&#10;* Added teleop controlled robot for testing ultrasonics" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -731,13 +836,212 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TankDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#492#493#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#2116#2117#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TankDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#492#493#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#2116#2117#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/CollisionDetect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TankDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#492#493#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#2116#2117#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotFeature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RobotDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -746,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,20 +1067,6 @@
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,9 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1437078899000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,7 +1082,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,9 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2935421">
           <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,9 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14677104">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#160#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,25 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49902153">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1437078899000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26418787">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,20 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#890#917#0" expanded="true" />
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-            <element signature="e#2579#2580#0" expanded="true" />
-            <element signature="e#2606#2607#0" expanded="true" />
-            <element signature="e#2747#2748#0" expanded="true" />
-            <element signature="e#2781#2782#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,17 +1134,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding>
-            <element signature="e#277#304#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#393#420#0" expanded="true" />
-            <element signature="e#478#505#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/net/dermetfan/gdx/physics/box2d/WorldObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16108248">
+          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/Box2DPolygonSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40592784">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/utils/Array.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2525773">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/utils/ObjectMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31056702">
+          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/CollisionDetect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78737116">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05798969">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/assets/AssetManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29288027">
+          <caret line="125" column="57" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/graphics/g2d/TextureRegion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.50970876">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/graphics/g2d/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30964467">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/net/dermetfan/gdx/graphics/g2d/Box2DSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2184466">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -908,23 +1212,53 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#492#493#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#2116#2117#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Entity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/com/badlogic/gdx/math/Vector2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34793815">
+          <caret line="267" column="49" selection-start-line="267" selection-start-column="49" selection-end-line="267" selection-end-column="49" />
+          <folding>
+            <element signature="e#6047#6048#0" expanded="false" />
+            <element signature="e#6084#6085#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/SimpleRobot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -932,31 +1266,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/BaseRobot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/CollisionDetect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -965,11 +1275,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/RoboWar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.851272">
-          <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
           <folding>
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/TeleopRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lightningrobotics/robowar/Ultrasonic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76209676">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -11,6 +11,8 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.sun.javafx.geom.Vec2d;
+import net.dermetfan.gdx.assets.AnnotationAssetManager;
+import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -25,10 +27,12 @@ public class RoboWar extends ApplicationAdapter {
     private boolean DEBUG = true;
 
     World world;
+    SpriteBatch batch;
+
     Box2DDebugRenderer b2dr;
 	OrthographicCamera camera;
 
-    private final int robotCount = 30;
+    private final int robotCount = 1;
     List<BaseRobot> robots;
 
     float width = Constants.defaultPixelWidth / PPM;
@@ -36,6 +40,10 @@ public class RoboWar extends ApplicationAdapter {
 
     public float getWidth() {
         return width;
+    }
+
+    public OrthographicCamera getCamera() {
+        return camera;
     }
 
     public float getHeight() {
@@ -58,14 +66,20 @@ public class RoboWar extends ApplicationAdapter {
         Gdx.app.setLogLevel(Gdx.app.LOG_DEBUG);
 
         world = new World(new Vector2(0,0), true);
+        batch = new SpriteBatch();
         world.setContactListener(new CollisionDetect());
         b2dr = new Box2DDebugRenderer();
         camera = new OrthographicCamera();
         robots = new LinkedList<BaseRobot>();
 
-        for (int i = 0; i < robotCount; ++i)
-            robots.add(new SimpleRobot(this));
         new Arena(this);
+
+        Assets.manager.finishLoading();
+        Assets.set();
+
+        for (int i = 0; i < robotCount; ++i)
+            robots.add(new TeleopRobot(this));
+//            robots.add(new SimpleRobot(this));
     }
 
     public void update()
@@ -93,11 +107,20 @@ public class RoboWar extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-        update();
         camera.position.set(0, 0, 0);
         camera.update();
-		Gdx.gl.glClearColor(0.1f, 0.1f, 0.7f, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClearColor(0.1f, 0.1f, 0.7f, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+        batch.draw(Assets.frc, -Constants.width / 2, -Constants.height / 2, Constants.width, Constants.height);
+        Box2DSprite.draw(batch, world);
+        batch.end();
+
+        update();
+
+
         b2dr.render(world, camera.combined);
 	}
 
@@ -108,6 +131,7 @@ public class RoboWar extends ApplicationAdapter {
     @Override
     public void dispose() {
         world.dispose();
+        batch.dispose();
         b2dr.dispose();
     }
 }

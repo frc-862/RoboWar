@@ -2,8 +2,9 @@ package com.lightningrobotics.robowar;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
+import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
-public class BaseRobot implements ContactListener {
+public class BaseRobot extends Box2DSprite implements ContactListener {
     RobotDefinition robotDefinition;
 
     public Body getBody() {
@@ -28,6 +29,7 @@ public class BaseRobot implements ContactListener {
     public BaseRobot(RoboWar game)
     {
         this(game, 0, 0);
+        setRegion(Assets.tank);
     }
 
     public BaseRobot(RoboWar game, float x, float y)
