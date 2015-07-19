@@ -2,43 +2,37 @@ package com.lightningrobotics.robowar;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
-import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
-public class BaseRobot extends Box2DSprite implements ContactListener {
+public class BaseRobot extends Entity implements ContactListener {
     RobotDefinition robotDefinition;
+
+    public BaseRobot(RoboWar game) {
+        this(game, 0, 0);
+        setTexture(Assets.tank, 0.5f, 1f);
+//        setRegion(Assets.tank);
+    }
+
+    public BaseRobot(RoboWar game, float x, float y) {
+        robotDefinition = new RobotDefinition(game);
+    }
 
     public Body getBody() {
         return robotDefinition.getBody();
     }
 
-    public boolean isAlive()
-    {
+    public boolean isAlive() {
         return robotDefinition.isAlive();
     }
 
-    public boolean reapIfDead()
-    {
-        if (!isAlive())
-        {
+    public boolean reapIfDead() {
+        if (!isAlive()) {
             robotDefinition.kill();
             return true;
         }
         return false;
     }
 
-    public BaseRobot(RoboWar game)
-    {
-        this(game, 0, 0);
-        setRegion(Assets.tank);
-    }
-
-    public BaseRobot(RoboWar game, float x, float y)
-    {
-        robotDefinition = new RobotDefinition(game);
-    }
-
-    public void featureComplete()
-    {
+    public void featureComplete() {
         float x = RoboWar.rand.nextFloat() * Constants.width - Constants.width / 2;
         float y = RoboWar.rand.nextFloat() * Constants.height - Constants.height / 2;
 
@@ -50,8 +44,7 @@ public class BaseRobot extends Box2DSprite implements ContactListener {
         robotDefinition.update();
     }
 
-    public void addFeature(RobotFeature feature)
-    {
+    public void addFeature(RobotFeature feature) {
         robotDefinition.addFeature(feature);
     }
 
@@ -62,27 +55,21 @@ public class BaseRobot extends Box2DSprite implements ContactListener {
 
     @Override
     public void endContact(Contact contact) {
-
     }
 
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {
-
     }
 
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {
-        for (float ni : impulse.getNormalImpulses()){
+        for (float ni : impulse.getNormalImpulses()) {
             Gdx.app.log("   normal", String.valueOf(ni));
             robotDefinition.damage(ni * 3);
         }
-//        for (float ti : impulse.getTangentImpulses()){
-//            Gdx.app.log("  tangent", String.valueOf(ti));
-//        }
     }
 
-    public void damage(float v)
-    {
+    public void damage(float v) {
         robotDefinition.damage(v);
     }
 }

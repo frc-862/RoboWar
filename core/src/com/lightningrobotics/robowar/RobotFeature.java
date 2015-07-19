@@ -27,13 +27,11 @@ public class RobotFeature {
 //        body.resetMassData();
     }
 
-    public float getCost()
-    {
+    public float getCost() {
         return cost;
     }
 
-    public float getWeight()
-    {
+    public float getWeight() {
         return weight;
     }
 }

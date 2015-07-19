@@ -11,10 +11,6 @@ import com.badlogic.gdx.physics.box2d.World;
  * Created by phurley on 7/18/15.
  */
 public class LaserWeapon extends RobotFeature {
-    enum Direction {
-        FRONT, BACK, LEFT, RIGHT
-    }
-
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
     private Vector2 sensorBegin = new Vector2();
@@ -24,37 +20,17 @@ public class LaserWeapon extends RobotFeature {
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
     private boolean on;
-
-    @Override
-    public boolean attachToRobot(RobotDefinition def) {
-        body = def.getBody();
-        return super.attachToRobot(def);
-    }
-
     private float reading;
     private Fixture target;
 
-    public boolean isOn() {
-        return on;
-    }
-
-    public void setOff() {
-        this.on = false;
-    }
-
-    public void setOn() {
-        this.on = true;
-    }
-
     public LaserWeapon(Direction dir) {
-        super(0,0);
+        super(0, 0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
         on = false;
 
-        sensorDirection.set(0,sensorMaxRange);
-        switch (dir)
-        {
+        sensorDirection.set(0, sensorMaxRange);
+        switch (dir) {
             case FRONT:
                 headingOffset = (float) Math.PI / 2;
                 break;
@@ -82,6 +58,23 @@ public class LaserWeapon extends RobotFeature {
         };
     }
 
+    @Override
+    public boolean attachToRobot(RobotDefinition def) {
+        body = def.getBody();
+        return super.attachToRobot(def);
+    }
+
+    public boolean isOn() {
+        return on;
+    }
+
+    public void setOff() {
+        this.on = false;
+    }
+
+    public void setOn() {
+        this.on = true;
+    }
 
     @Override
     public void update(RobotDefinition def) {
@@ -117,6 +110,10 @@ public class LaserWeapon extends RobotFeature {
 
     public float getReading() {
         return reading;
+    }
+
+    enum Direction {
+        FRONT, BACK, LEFT, RIGHT
     }
 
 }

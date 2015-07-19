@@ -20,8 +20,7 @@ public class Arena {
         body = null;
     }
 
-    public Body buildWall(RoboWar game, float x, float y, float h, float w)
-    {
+    public Body buildWall(RoboWar game, float x, float y, float h, float w) {
         BodyDef wall = new BodyDef();
         wall.type = BodyDef.BodyType.StaticBody;
         wall.position.set(x, y);

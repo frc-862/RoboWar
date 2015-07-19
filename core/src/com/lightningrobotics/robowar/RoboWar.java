@@ -1,18 +1,14 @@
 package com.lightningrobotics.robowar;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
-import com.sun.javafx.geom.Vec2d;
-import net.dermetfan.gdx.assets.AnnotationAssetManager;
-import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -23,20 +19,16 @@ import static com.lightningrobotics.robowar.Constants.PPM;
 
 public class RoboWar extends ApplicationAdapter {
     public static Random rand = new Random();
-
-    private boolean DEBUG = true;
-
+    private final int robotCount = 5;
     World world;
     SpriteBatch batch;
 
     Box2DDebugRenderer b2dr;
-	OrthographicCamera camera;
-
-    private final int robotCount = 5;
+    OrthographicCamera camera;
     List<BaseRobot> robots;
-
     float width = Constants.defaultPixelWidth / PPM;
     float height = Constants.defaultPixelHeight / PPM;
+    private boolean DEBUG = true;
 
     public float getWidth() {
         return width;
@@ -62,10 +54,10 @@ public class RoboWar extends ApplicationAdapter {
     }
 
     @Override
-    public void create () {
-        Gdx.app.setLogLevel(Gdx.app.LOG_DEBUG);
+    public void create() {
+        Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
-        world = new World(new Vector2(0,0), true);
+        world = new World(new Vector2(0, 0), true);
         batch = new SpriteBatch();
         world.setContactListener(new CollisionDetect());
         b2dr = new Box2DDebugRenderer();
@@ -82,14 +74,11 @@ public class RoboWar extends ApplicationAdapter {
         robots.add(new TeleopRobot(this));
     }
 
-    public void update()
-    {
-        for (BaseRobot r : robots)
-        {
+    public void update() {
+        for (BaseRobot r : robots) {
             r.update();
         }
-        if (!world.isLocked())
-        {
+        if (!world.isLocked()) {
             Iterator<BaseRobot> iter = robots.iterator();
             while (iter.hasNext()) {
                 if (iter.next().reapIfDead()) {
@@ -105,8 +94,8 @@ public class RoboWar extends ApplicationAdapter {
 
     }
 
-	@Override
-	public void render () {
+    @Override
+    public void render() {
         camera.position.set(0, 0, 0);
         camera.update();
         Gdx.gl.glClearColor(0.1f, 0.1f, 0.7f, 1);
@@ -115,14 +104,16 @@ public class RoboWar extends ApplicationAdapter {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         batch.draw(Assets.frc, -Constants.width / 2, -Constants.height / 2, Constants.width, Constants.height);
-        Box2DSprite.draw(batch, world);
+//        Box2DSprite.draw(batch, world);
+        for (BaseRobot robot : robots) {
+            robot.render(batch);
+        }
         batch.end();
 
         update();
 
-
         b2dr.render(world, camera.combined);
-	}
+    }
 
     public World getWorld() {
         return world;

@@ -1,6 +1,5 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -11,38 +10,33 @@ import java.util.List;
 
 public class RobotDefinition {
     public List<RobotFeature> features = new LinkedList<>();
-
-    RoboWar game;
-
-    public RoboWar getGame() {
-        return game;
-    }
-
-    Body body;
-
     public float weightLimit = 120;
     public float cash = 4000;
-
     public float weight = 10;
     public float maxRotation = 1;
     public float maxAcceleration = 2;
     public float maxVelocity = 10;
     public float width;
     public float length;
-
     public float health = 10;
+    RoboWar game;
+    Body body;
 
     public RobotDefinition(RoboWar game) {
         this.game = game;
         body = null;
     }
 
+    public RoboWar getGame() {
+        return game;
+    }
+
     @SuppressWarnings("unused")
     public void update() {
 //        if (isAlive()) {
-            for (RobotFeature feature : features) {
-                feature.update(this);
-            }
+        for (RobotFeature feature : features) {
+            feature.update(this);
+        }
 //        }
     }
 
@@ -73,7 +67,7 @@ public class RobotDefinition {
 
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(x,y);
+        bodyDef.position.set(x, y);
         body = game.getWorld().createBody(bodyDef);
 
         PolygonShape shape = new PolygonShape();
@@ -87,7 +81,7 @@ public class RobotDefinition {
         fixtureDef.friction = 0.2f;
         body.createFixture(shape, 1);
 
-        for(RobotFeature feature : features)
+        for (RobotFeature feature : features)
             feature.buildBody(body);
 
         body.setAngularDamping(5);
@@ -101,21 +95,17 @@ public class RobotDefinition {
         return body;
     }
 
-    public boolean damage(float damage)
-    {
+    public boolean damage(float damage) {
         health -= damage;
         return isAlive();
     }
 
-    public boolean isAlive()
-    {
+    public boolean isAlive() {
         return health > 0f;
     }
 
-    public void kill()
-    {
-        if (body != null)
-        {
+    public void kill() {
+        if (body != null) {
             game.getWorld().destroyBody(body);
             body = null;
         }

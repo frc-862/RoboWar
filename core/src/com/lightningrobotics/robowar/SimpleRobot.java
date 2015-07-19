@@ -1,11 +1,9 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-
 public class SimpleRobot extends BaseRobot {
     TankDrive drive;
     Ultrasonic frontSensor;
+    int counter = 0;
 
     public SimpleRobot(RoboWar game) {
         super(game);
@@ -19,7 +17,6 @@ public class SimpleRobot extends BaseRobot {
         featureComplete();
     }
 
-    int counter = 0;
     @Override
     public void update() {
         if (++counter % 60 * 3 == 0) {

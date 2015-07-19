@@ -11,10 +11,6 @@ import com.badlogic.gdx.physics.box2d.World;
  * Created by phurley on 7/18/15.
  */
 public class LIDAR extends RobotFeature {
-    enum Direction {
-        FRONT, BACK, LEFT, RIGHT
-    }
-
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
     private Vector2 sensorBegin = new Vector2();
@@ -23,23 +19,15 @@ public class LIDAR extends RobotFeature {
     private Body body;
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
-
-    @Override
-    public boolean attachToRobot(RobotDefinition def) {
-        body = def.getBody();
-        return super.attachToRobot(def);
-    }
-
     private float reading;
 
     public LIDAR(Direction dir) {
-        super(0,0);
+        super(0, 0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
 
-        sensorDirection.set(0,sensorMaxRange);
-        switch (dir)
-        {
+        sensorDirection.set(0, sensorMaxRange);
+        switch (dir) {
             case FRONT:
                 headingOffset = (float) Math.PI / 2;
                 break;
@@ -57,7 +45,7 @@ public class LIDAR extends RobotFeature {
         callback = new RayCastCallback() {
             @Override
             public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
-                if (fixture.getBody() != body){
+                if (fixture.getBody() != body) {
                     reading = fraction * sensorMaxRange;
                     return 0;
                 }
@@ -66,6 +54,11 @@ public class LIDAR extends RobotFeature {
         };
     }
 
+    @Override
+    public boolean attachToRobot(RobotDefinition def) {
+        body = def.getBody();
+        return super.attachToRobot(def);
+    }
 
     @Override
     public void update(RobotDefinition def) {
@@ -91,6 +84,10 @@ public class LIDAR extends RobotFeature {
 
     public float getReading() {
         return reading;
+    }
+
+    enum Direction {
+        FRONT, BACK, LEFT, RIGHT
     }
 
 }

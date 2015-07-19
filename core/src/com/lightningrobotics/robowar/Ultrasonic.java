@@ -1,24 +1,13 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
-import net.dermetfan.gdx.math.MathUtils;
 
-import java.util.concurrent.Future;
-
-/**
- * Created by phurley on 7/18/15.
- */
 public class Ultrasonic extends RobotFeature {
-    enum Direction {
-        FRONT, BACK, LEFT, RIGHT
-    }
-
     private final float sweep = (float) Math.toRadians((double) 30f);
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
@@ -28,24 +17,16 @@ public class Ultrasonic extends RobotFeature {
     private Body body;
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
-
-    @Override
-    public boolean attachToRobot(RobotDefinition def) {
-        body = def.getBody();
-        return super.attachToRobot(def);
-    }
-
     private float reading;
     private Fixture target;
 
     public Ultrasonic(Direction dir) {
-        super(0,0);
+        super(0, 0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
 
-        sensorDirection.set(0,sensorMaxRange);
-        switch (dir)
-        {
+        sensorDirection.set(0, sensorMaxRange);
+        switch (dir) {
             case FRONT:
                 headingOffset = (float) Math.PI / 2;
                 break;
@@ -73,6 +54,11 @@ public class Ultrasonic extends RobotFeature {
         };
     }
 
+    @Override
+    public boolean attachToRobot(RobotDefinition def) {
+        body = def.getBody();
+        return super.attachToRobot(def);
+    }
 
     @Override
     public void update(RobotDefinition def) {
@@ -114,6 +100,10 @@ public class Ultrasonic extends RobotFeature {
 
     public float getReading() {
         return reading;
+    }
+
+    enum Direction {
+        FRONT, BACK, LEFT, RIGHT
     }
 
 }

@@ -16,7 +16,7 @@ public abstract class Assets {
     }
 
     public static boolean update() {
-        if(manager.update()) {
+        if (manager.update()) {
             set();
             return true;
         }
