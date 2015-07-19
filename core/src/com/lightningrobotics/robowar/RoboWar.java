@@ -32,7 +32,7 @@ public class RoboWar extends ApplicationAdapter {
     Box2DDebugRenderer b2dr;
 	OrthographicCamera camera;
 
-    private final int robotCount = 1;
+    private final int robotCount = 5;
     List<BaseRobot> robots;
 
     float width = Constants.defaultPixelWidth / PPM;
@@ -78,8 +78,8 @@ public class RoboWar extends ApplicationAdapter {
         Assets.set();
 
         for (int i = 0; i < robotCount; ++i)
-            robots.add(new TeleopRobot(this));
-//            robots.add(new SimpleRobot(this));
+            robots.add(new SimpleRobot(this));
+        robots.add(new TeleopRobot(this));
     }
 
     public void update()

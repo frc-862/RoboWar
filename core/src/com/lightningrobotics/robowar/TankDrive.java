@@ -15,7 +15,7 @@ public class TankDrive extends RobotFeature {
     }
 
     public void setLeftAcc(float leftAcc) {
-        this.leftAcc = leftAcc;
+        this.leftAcc = Math.min(Math.max(leftAcc, -1), 1);
     }
 
     public float getRightAcc() {
@@ -23,7 +23,7 @@ public class TankDrive extends RobotFeature {
     }
 
     public void setRightAcc(float rightAcc) {
-        this.rightAcc = rightAcc;
+        this.rightAcc = Math.min(Math.max(rightAcc, -1), 1);
     }
 
     private float leftAcc = 0f;
@@ -37,9 +37,9 @@ public class TankDrive extends RobotFeature {
         float x = MathUtils.cos(rot);
         float y = MathUtils.sin(rot);
 
-        accel.set(leftAcc * x, leftAcc * y);
+        accel.set(leftAcc * x, leftAcc * y * motorCount);
         def.getBody().applyForce(accel, def.getBody().getWorldPoint(forceLocation.set(-def.getWidth() / 2, 0)), true);
-        accel.set(rightAcc * x, rightAcc * y);
+        accel.set(rightAcc * x, rightAcc * y * motorCount);
         def.getBody().applyForce(accel, def.getBody().getWorldPoint(forceLocation.set(def.getWidth() / 2, 0)), true);
 
         updateFriction(def.getBody());

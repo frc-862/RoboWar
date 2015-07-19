@@ -1,25 +1,20 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
-import net.dermetfan.gdx.math.MathUtils;
-
-import java.util.concurrent.Future;
 
 /**
  * Created by phurley on 7/18/15.
  */
-public class Ultrasonic extends RobotFeature {
+public class LIDAR extends RobotFeature {
     enum Direction {
         FRONT, BACK, LEFT, RIGHT
     }
 
-    private final float sweep = (float) Math.toRadians((double) 30f);
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
     private Vector2 sensorBegin = new Vector2();
@@ -36,9 +31,8 @@ public class Ultrasonic extends RobotFeature {
     }
 
     private float reading;
-    private Fixture target;
 
-    public Ultrasonic(Direction dir) {
+    public LIDAR(Direction dir) {
         super(0,0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
@@ -60,15 +54,14 @@ public class Ultrasonic extends RobotFeature {
                 break;
         }
 
-        Object self = this;
-
         callback = new RayCastCallback() {
             @Override
             public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
-                reading = fraction * sensorMaxRange;
-                sensorEnd.set(point);
-                target = fixture;
-                return 0;
+                if (fixture.getBody() != body){
+                    reading = fraction * sensorMaxRange;
+                    return 0;
+                }
+                return 1;
             }
         };
     }
@@ -79,33 +72,17 @@ public class Ultrasonic extends RobotFeature {
         Body body = def.getBody();
         World world = body.getWorld();
 
-        reading = -1;
-        target = null;
-
         sensorBegin.set(body.getPosition());
+        sensorDirection.setAngleRad(body.getAngle() + headingOffset);
+        sensorEnd.set(sensorDirection).add(sensorBegin);
 
-        float[] points = new float[30];
-        float angle = sweep / -2;
-        float sweepDelta = sweep / points.length;
+        world.rayCast(callback, sensorBegin, sensorEnd);
 
         shapeRenderer.setProjectionMatrix(def.getGame().getCamera().combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(0, 0, 0, 1);
-
-        for (int i = 0; i < points.length; ++i) {
-            sensorDirection.setAngleRad(body.getAngle() + headingOffset + angle);
-            sensorEnd.set(sensorDirection).add(sensorBegin);
-            angle += sweepDelta;
-
-            world.rayCast(callback, sensorBegin, sensorEnd);
-            points[i] = reading;
-            shapeRenderer.line(sensorBegin, sensorEnd);
-        }
-
+        shapeRenderer.line(sensorBegin, sensorEnd);
         shapeRenderer.end();
-
-        java.util.Arrays.sort(points);
-        reading = (points[0] + points[1] + points[2]) / 3;
     }
 
     public float getSensorMaxRange() {

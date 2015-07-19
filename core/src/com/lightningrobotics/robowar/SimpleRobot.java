@@ -26,7 +26,6 @@ public class SimpleRobot extends BaseRobot {
             drive.setLeftAcc(RoboWar.rand.nextFloat() * 10f - 5f);
             drive.setRightAcc(RoboWar.rand.nextFloat() * 10f - 5f);
         }
-        Gdx.app.log("Range", String.valueOf(frontSensor.getReading()));
 
         super.update();
     }

@@ -1,25 +1,20 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
-import net.dermetfan.gdx.math.MathUtils;
-
-import java.util.concurrent.Future;
 
 /**
  * Created by phurley on 7/18/15.
  */
-public class Ultrasonic extends RobotFeature {
+public class LaserWeapon extends RobotFeature {
     enum Direction {
         FRONT, BACK, LEFT, RIGHT
     }
 
-    private final float sweep = (float) Math.toRadians((double) 30f);
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
     private Vector2 sensorBegin = new Vector2();
@@ -28,6 +23,7 @@ public class Ultrasonic extends RobotFeature {
     private Body body;
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
+    private boolean on;
 
     @Override
     public boolean attachToRobot(RobotDefinition def) {
@@ -38,10 +34,23 @@ public class Ultrasonic extends RobotFeature {
     private float reading;
     private Fixture target;
 
-    public Ultrasonic(Direction dir) {
+    public boolean isOn() {
+        return on;
+    }
+
+    public void setOff() {
+        this.on = false;
+    }
+
+    public void setOn() {
+        this.on = true;
+    }
+
+    public LaserWeapon(Direction dir) {
         super(0,0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
+        on = false;
 
         sensorDirection.set(0,sensorMaxRange);
         switch (dir)
@@ -76,36 +85,30 @@ public class Ultrasonic extends RobotFeature {
 
     @Override
     public void update(RobotDefinition def) {
-        Body body = def.getBody();
-        World world = body.getWorld();
+        if (isOn()) {
+            Body body = def.getBody();
+            World world = body.getWorld();
 
-        reading = -1;
-        target = null;
+            reading = -1;
+            target = null;
 
-        sensorBegin.set(body.getPosition());
-
-        float[] points = new float[30];
-        float angle = sweep / -2;
-        float sweepDelta = sweep / points.length;
-
-        shapeRenderer.setProjectionMatrix(def.getGame().getCamera().combined);
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(0, 0, 0, 1);
-
-        for (int i = 0; i < points.length; ++i) {
-            sensorDirection.setAngleRad(body.getAngle() + headingOffset + angle);
+            sensorBegin.set(body.getPosition());
+            sensorDirection.setAngleRad(body.getAngle() + headingOffset);
             sensorEnd.set(sensorDirection).add(sensorBegin);
-            angle += sweepDelta;
 
             world.rayCast(callback, sensorBegin, sensorEnd);
-            points[i] = reading;
+
+            if ((target != null) && (target.getBody().getUserData() instanceof BaseRobot)) {
+                BaseRobot zapped = (BaseRobot) target.getBody().getUserData();
+                zapped.damage(0.1f);
+            }
+
+            shapeRenderer.setProjectionMatrix(def.getGame().getCamera().combined);
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(1, 0, 0, 1);
             shapeRenderer.line(sensorBegin, sensorEnd);
+            shapeRenderer.end();
         }
-
-        shapeRenderer.end();
-
-        java.util.Arrays.sort(points);
-        reading = (points[0] + points[1] + points[2]) / 3;
     }
 
     public float getSensorMaxRange() {

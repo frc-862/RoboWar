@@ -74,10 +74,15 @@ public class BaseRobot extends Box2DSprite implements ContactListener {
     public void postSolve(Contact contact, ContactImpulse impulse) {
         for (float ni : impulse.getNormalImpulses()){
             Gdx.app.log("   normal", String.valueOf(ni));
-            robotDefinition.damage(ni);
+            robotDefinition.damage(ni * 3);
         }
 //        for (float ti : impulse.getTangentImpulses()){
 //            Gdx.app.log("  tangent", String.valueOf(ti));
 //        }
+    }
+
+    public void damage(float v)
+    {
+        robotDefinition.damage(v);
     }
 }
