@@ -74,7 +74,7 @@ public class LIDAR extends RobotFeature {
         shapeRenderer.setProjectionMatrix(def.getGame().getCamera().combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(0, 0, 0, 1);
-        shapeRenderer.line(sensorBegin, sensorEnd);
+//        shapeRenderer.line(sensorBegin, sensorEnd);
         shapeRenderer.end();
     }
 

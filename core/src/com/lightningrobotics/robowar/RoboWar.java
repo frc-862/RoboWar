@@ -22,6 +22,7 @@ public class RoboWar extends ApplicationAdapter {
     private final int robotCount = 0;
     public static Random rand = new Random();
 
+    Barrel blueBarrel;
     Score score;
     World world;
     SpriteBatch batch;
@@ -88,6 +89,7 @@ public class RoboWar extends ApplicationAdapter {
         for (int i = 0; i < robotCount; ++i)
             robots.add(new SimpleRobot(this));
         robots.add(new TeleopRobot(this));
+        blueBarrel = new Barrel(this, 0, 0);
     }
 
     public void update() {
@@ -96,6 +98,8 @@ public class RoboWar extends ApplicationAdapter {
         for (BaseRobot r : robots) {
             r.update();
         }
+        blueBarrel.update();
+
         if (!world.isLocked()) {
             Iterator<BaseRobot> iter = robots.iterator();
             while (iter.hasNext()) {
@@ -127,6 +131,7 @@ public class RoboWar extends ApplicationAdapter {
         for (BaseRobot robot : robots) {
             robot.render(batch);
         }
+        blueBarrel.render(batch);
         batch.end();
         score.render(batch);
 

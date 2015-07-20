@@ -85,7 +85,7 @@ public class Ultrasonic extends RobotFeature {
 
             world.rayCast(callback, sensorBegin, sensorEnd);
             points[i] = reading;
-            shapeRenderer.line(sensorBegin, sensorEnd);
+            // shapeRenderer.line(sensorBegin, sensorEnd);
         }
 
         shapeRenderer.end();

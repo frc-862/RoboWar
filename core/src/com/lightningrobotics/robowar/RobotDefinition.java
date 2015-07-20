@@ -85,7 +85,7 @@ public class RobotDefinition {
             feature.buildBody(body);
 
         body.setAngularDamping(5);
-        body.setLinearDamping(3);
+        body.setLinearDamping(2);
 
         shape.dispose();
         return body;

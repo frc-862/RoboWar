@@ -64,8 +64,8 @@ public class BaseRobot extends Entity implements ContactListener {
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {
         for (float ni : impulse.getNormalImpulses()) {
-            Gdx.app.log("   normal", String.valueOf(ni));
-            robotDefinition.damage(ni * 3);
+//            Gdx.app.log("   normal", String.valueOf(ni));
+            // robotDefinition.damage(ni * 3);
         }
     }
 
