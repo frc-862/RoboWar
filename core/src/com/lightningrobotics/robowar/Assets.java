@@ -7,10 +7,11 @@ public abstract class Assets {
 
     public static final AssetManager manager = new AssetManager();
 
-    public static Texture frc, tank, tankCannon;
+    public static Texture frc, tank, tankCannon, gameField;
 
     static {
         manager.load("frc.png", Texture.class);
+        manager.load("gameField.png", Texture.class);
         manager.load("tank.png", Texture.class);
         manager.load("tankCannon.png", Texture.class);
     }
@@ -27,12 +28,14 @@ public abstract class Assets {
         String dir = System.getProperty("user.dir");
         System.out.println(dir);
         frc = manager.get("frc.png", Texture.class);
+        gameField = manager.get("gameField.png", Texture.class);
         tank = manager.get("tank.png", Texture.class);
         tankCannon = manager.get("tankCannon.png", Texture.class);
     }
 
     public static void dispose() {
         frc.dispose();
+        gameField.dispose();
         tank.dispose();
         tankCannon.dispose();
     }

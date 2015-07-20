@@ -1,5 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactManager">
+    <artifact type="war" name="Gradle : robowar:html : html-draft-1.0.war">
+      <output-path>$PROJECT_DIR$/out/artifacts/html</output-path>
+      <properties id="gradle-properties">
+        <options external-project-path="$PROJECT_DIR$/html" />
+      </properties>
+      <root id="archive" name="html-draft-1.0.war">
+        <element id="javaee-facet-resources" facet="html/web/Web Gradle : html-draft-1.0.war" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="html" />
+            <element id="dir-copy" path="$PROJECT_DIR$/html/build/resources/main" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="robowar-core-1.0.jar">
+              <element id="module-output" name="core" />
+              <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
+            </element>
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-user:2.6.1" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA:sources" />
+            <element id="library" level="project" name="Gradle: org.json:json:20090211" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-servlet:2.6.0" />
+          </element>
+        </element>
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/html/exploded/html-draft-1.0.war/META-INF/MANIFEST.MF" />
+        </element>
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="Gradle : robowar:html : html-draft-1.0.war (exploded)">
+      <output-path>$PROJECT_DIR$/out/artifacts/html/exploded/html-draft-1.0.war</output-path>
+      <properties id="gradle-properties">
+        <options external-project-path="$PROJECT_DIR$/html" />
+      </properties>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="html/web/Web Gradle : html-draft-1.0.war" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="html" />
+            <element id="dir-copy" path="$PROJECT_DIR$/html/build/resources/main" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="robowar-core-1.0.jar">
+              <element id="module-output" name="core" />
+              <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
+            </element>
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-user:2.6.1" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA:sources" />
+            <element id="library" level="project" name="Gradle: org.json:json:20090211" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-servlet:2.6.0" />
+          </element>
+        </element>
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/html/exploded/html-draft-1.0.war/META-INF/MANIFEST.MF" />
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="Gradle : robowar:html : html-1.0.war">
+      <output-path>$PROJECT_DIR$/out/artifacts/html</output-path>
+      <properties id="gradle-properties">
+        <options external-project-path="$PROJECT_DIR$/html" />
+      </properties>
+      <root id="archive" name="html-1.0.war">
+        <element id="javaee-facet-resources" facet="html/web/Web Gradle : html-1.0.war" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="html" />
+            <element id="dir-copy" path="$PROJECT_DIR$/html/build/resources/main" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="robowar-core-1.0.jar">
+              <element id="module-output" name="core" />
+              <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
+            </element>
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-user:2.6.1" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA:sources" />
+            <element id="library" level="project" name="Gradle: org.json:json:20090211" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-servlet:2.6.0" />
+          </element>
+        </element>
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/html/exploded/html-1.0.war/META-INF/MANIFEST.MF" />
+        </element>
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="Gradle : robowar:html : html-1.0.war (exploded)">
+      <output-path>$PROJECT_DIR$/out/artifacts/html/exploded/html-1.0.war</output-path>
+      <properties id="gradle-properties">
+        <options external-project-path="$PROJECT_DIR$/html" />
+      </properties>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="html/web/Web Gradle : html-1.0.war" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="html" />
+            <element id="dir-copy" path="$PROJECT_DIR$/html/build/resources/main" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="robowar-core-1.0.jar">
+              <element id="module-output" name="core" />
+              <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
+            </element>
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d-gwt:1.6.4:sources" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-user:2.6.1" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA" />
+            <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.0.0.GA:sources" />
+            <element id="library" level="project" name="Gradle: org.json:json:20090211" />
+            <element id="library" level="project" name="Gradle: com.google.gwt:gwt-servlet:2.6.0" />
+          </element>
+        </element>
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/html/exploded/html-1.0.war/META-INF/MANIFEST.MF" />
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -23,6 +169,27 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.7" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/desktop" />
+            <option value="$PROJECT_DIR$/html" />
+            <option value="$PROJECT_DIR$/ios" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
   </component>
   <component name="GradleUISettings">
     <setting name="root" />
@@ -186,5 +353,283 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-gwt/1.6.4/6cdefbba1db6a30b4bd5298987850809ccd95bc9/gdx-backend-gwt-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-gwt/1.6.4/d90bc0980ade86a79d7af9f0e9ae0516d6e6cb70/gdx-backend-gwt-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-gwt/1.6.4/d90bc0980ade86a79d7af9f0e9ae0516d6e6cb70/gdx-backend-gwt-1.6.4-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-gwt/1.6.4/d90bc0980ade86a79d7af9f0e9ae0516d6e6cb70/gdx-backend-gwt-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-backend-lwjgl:1.6.4">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.6.4/5e1068f6e7081aba4dc03cfe3f6353b6e615c5e1/gdx-backend-lwjgl-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.6.4/f5c2527a72730cd559709d997ef4c57552fc9328/gdx-backend-lwjgl-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-backend-robovm:1.6.4">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-robovm/1.6.4/f9667e1e7be75ea0a7a702dc28da87661b37b2eb/gdx-backend-robovm-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-robovm/1.6.4/8ed7bd61fbed8414526de89d0c529727f823ead8/gdx-backend-robovm-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-box2d-gwt:1.6.4:sources">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d-gwt/1.6.4/d4d9e1898c8f5862c92d6da1b90e8200fe80add0/gdx-box2d-gwt-1.6.4-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d-gwt/1.6.4/d4d9e1898c8f5862c92d6da1b90e8200fe80add0/gdx-box2d-gwt-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-box2d-platform:1.6.4:natives-desktop">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d-platform/1.6.4/dedfa0b11b17473b49f64b550d5407249a0ae234/gdx-box2d-platform-1.6.4-natives-desktop.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-box2d-platform:1.6.4:natives-ios">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d-platform/1.6.4/9b63f5b978b8a54d68796c328467047d55974fcc/gdx-box2d-platform-1.6.4-natives-ios.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.4/eb089b58828b842bbdd4f7cb48b54626924cfdd5/gdx-box2d-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.4/19afcb776ab1fc9fddb1011292266c53aebfc9e7/gdx-box2d-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4:sources">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.4/19afcb776ab1fc9fddb1011292266c53aebfc9e7/gdx-box2d-1.6.4-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.4/19afcb776ab1fc9fddb1011292266c53aebfc9e7/gdx-box2d-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-platform:1.6.4:natives-desktop">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-platform/1.6.4/2c2a39fba93a5c4ba5a5d291ac4b5b7d642bf5d8/gdx-platform-1.6.4-natives-desktop.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx-platform:1.6.4:natives-ios">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-platform/1.6.4/cc62b1645d117b4d779ca5d49949c699f94e8956/gdx-platform-1.6.4-natives-ios.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx:1.6.4">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/13ed9a042554afce8c8b38c53e9b6d6d9c10600e/gdx-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.4/cecef47b1a565819c3991ec13d967d685605c5c0/gdx-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.badlogicgames.jlayer:jlayer:1.0.1-gdx">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.jlayer/jlayer/1.0.1-gdx/7cca83cec5c1b2f011362f4d85aabd71a73b049d/jlayer-1.0.1-gdx.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.jlayer/jlayer/1.0.1-gdx/f1c4ffebc5e4f68be914404faab580c20de8ea1f/jlayer-1.0.1-gdx-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.google.gwt:gwt-servlet:2.6.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-servlet/2.6.0/d1e40c23bf78192482ee76c93619a10b4ea649f7/gwt-servlet-2.6.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-servlet/2.6.0/7a59cc91e16f255d22b692dcc5839d3eb1d606c6/gwt-servlet-2.6.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.google.gwt:gwt-user:2.6.1">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-user/2.6.1/c078b1b8cc0281214b0eb458d2c283d039374fad/gwt-user-2.6.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-user/2.6.1/c32cc6470243fe2703e807e1025ec3354fba0ef8/gwt-user-2.6.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: javax.validation:validation-api:1.0.0.GA">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.0.0.GA/b6bd7f9d78f6fdaa3c37dae18a4bd298915f328e/validation-api-1.0.0.GA.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.0.0.GA/7a561191db2203550fbfa40d534d4997624cd369/validation-api-1.0.0.GA-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: javax.validation:validation-api:1.0.0.GA:sources">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.0.0.GA/7a561191db2203550fbfa40d534d4997624cd369/validation-api-1.0.0.GA-sources.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.0.0.GA/7a561191db2203550fbfa40d534d4997624cd369/validation-api-1.0.0.GA-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-linux">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/7ff832a6eb9ab6a767f1ade2b548092d0fa64795/jinput-platform-2.0.5-natives-linux.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-osx">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/53f9c919f34d2ca9de8c51fc4e1e8282029a9232/jinput-platform-2.0.5-natives-osx.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-windows">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/385ee093e01f587f30ee1c8a2ee7d408fd732e16/jinput-platform-2.0.5-natives-windows.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: net.java.jinput:jinput:2.0.5">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/39c7796b469a600f72380316f6b1f11db6c2c7c4/jinput-2.0.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/82604cfeb87b9ab70ed70aa19a137de8ceb21504/jinput-2.0.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: net.java.jutils:jutils:1.0.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/e12fe1fda814bd348c1579329c86943d2cd3c6a6/jutils-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/d18678a00b216863206a1bb6190507e02a32971b/jutils-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.jcraft:jorbis:0.0.17">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jcraft/jorbis/0.0.17/8872d22b293e8f5d7d56ff92be966e6dc28ebdc6/jorbis-0.0.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jcraft/jorbis/0.0.17/5446be5d62e4c6b347c8e6cd28dc00a936417ba2/jorbis-0.0.17-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.json:json:20090211">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-linux">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/d276cdf61fe2b516c7b7f4aa1b8dea91dbdc8d56/lwjgl-platform-2.9.2-natives-linux.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-osx">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/d55b46b40b40249d627a83a7f7f22649709d70c3/lwjgl-platform-2.9.2-natives-osx.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-windows">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/510c7d317f5e9e700b9cfaac5fd38bdebf0702e0/lwjgl-platform-2.9.2-natives-windows.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.lwjgl.lwjgl:lwjgl:2.9.2">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.2/a9d80fe5935c7a9149f6584d9777cfd471f65489/lwjgl-2.9.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.2/4d114b5ef3ad3bf571b1f090cb00855991067e0b/lwjgl-2.9.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.lwjgl.lwjgl:lwjgl_util:2.9.2">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl_util/2.9.2/4b9e37300a87799856e0bd15ed81663cdb6b0947/lwjgl_util-2.9.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl_util/2.9.2/308d4ebe8d7b240d3490b6a7e0424807ea3ad98b/lwjgl_util-2.9.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.robovm:robovm-cocoatouch:1.5.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-cocoatouch/1.5.0/8cd72d35fe2c6fd5424a428a50f65be9ab2f8e82/robovm-cocoatouch-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-cocoatouch/1.5.0/7edb119ddbea771e6a3bc651bfeafaeb178db942/robovm-cocoatouch-1.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.robovm:robovm-objc:1.5.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-objc/1.5.0/fc3787d22f9bd2211ccbbc6a2e36ba6163610b21/robovm-objc-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-objc/1.5.0/74927e28c6ce2a6c954dc34754a57852f3b660c8/robovm-objc-1.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.robovm:robovm-rt:1.5.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-rt/1.5.0/6796fd69e8a9abc29d5fba23799400efb8e877c8/robovm-rt-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robovm/robovm-rt/1.5.0/a3220d8cda24a480add9078993bdf2bb25d362c5/robovm-rt-1.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
 </project>

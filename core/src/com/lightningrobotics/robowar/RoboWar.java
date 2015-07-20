@@ -18,17 +18,24 @@ import java.util.Random;
 import static com.lightningrobotics.robowar.Constants.PPM;
 
 public class RoboWar extends ApplicationAdapter {
+    private final int gameSeconds = 60 * 3;
+    private final int robotCount = 0;
     public static Random rand = new Random();
-    private final int robotCount = 5;
+
+    Score score;
     World world;
     SpriteBatch batch;
-
     Box2DDebugRenderer b2dr;
     OrthographicCamera camera;
     List<BaseRobot> robots;
     float width = Constants.defaultPixelWidth / PPM;
     float height = Constants.defaultPixelHeight / PPM;
-    private boolean DEBUG = true;
+    private float timeRemaining;
+    private boolean DEBUG = false;
+
+    public Score getScore() {
+        return score;
+    }
 
     public float getWidth() {
         return width;
@@ -51,14 +58,23 @@ public class RoboWar extends ApplicationAdapter {
 
         camera.viewportWidth = this.width;
         camera.viewportHeight = this.height;
+
+        score.resize(width, height);
+    }
+
+    public int remainingSeconds() {
+        return (int) timeRemaining;
     }
 
     @Override
     public void create() {
+        timeRemaining = gameSeconds;
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
+        score = new Score(this);
         world = new World(new Vector2(0, 0), true);
         batch = new SpriteBatch();
+//        font.getData().setScale(0.1f, 0.1f);
         world.setContactListener(new CollisionDetect());
         b2dr = new Box2DDebugRenderer();
         camera = new OrthographicCamera();
@@ -75,6 +91,8 @@ public class RoboWar extends ApplicationAdapter {
     }
 
     public void update() {
+        timeRemaining -= Gdx.graphics.getDeltaTime();
+
         for (BaseRobot r : robots) {
             r.update();
         }
@@ -97,22 +115,26 @@ public class RoboWar extends ApplicationAdapter {
     @Override
     public void render() {
         camera.position.set(0, 0, 0);
+        camera.position.set(0, 0, 0);
         camera.update();
+
         Gdx.gl.glClearColor(0.1f, 0.1f, 0.7f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        batch.draw(Assets.frc, -Constants.width / 2, -Constants.height / 2, Constants.width, Constants.height);
-//        Box2DSprite.draw(batch, world);
+        batch.draw(Assets.gameField, -Constants.width / 2, -Constants.height / 2, Constants.width, Constants.height);
         for (BaseRobot robot : robots) {
             robot.render(batch);
         }
         batch.end();
+        score.render(batch);
 
-        update();
+        if (remainingSeconds() >= 0)
+            update();
 
-        b2dr.render(world, camera.combined);
+        if (DEBUG)
+            b2dr.render(world, camera.combined);
     }
 
     public World getWorld() {
@@ -126,3 +148,4 @@ public class RoboWar extends ApplicationAdapter {
         b2dr.dispose();
     }
 }
+
