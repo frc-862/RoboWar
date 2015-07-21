@@ -8,7 +8,7 @@ public abstract class Assets {
     public static final AssetManager manager = new AssetManager();
 
     public static Texture frc, tank, tankCannon, gameField,
-            blueRobot, redRobot, barrel;
+            blueRobot, redRobot, barrel, redBarrel, blueBarrel;
 
     static {
         manager.load("frc.png", Texture.class);
@@ -18,6 +18,8 @@ public abstract class Assets {
         manager.load("redTank.png", Texture.class);
         manager.load("tankCannon.png", Texture.class);
         manager.load("barrel.png", Texture.class);
+        manager.load("redBarrel.png", Texture.class);
+        manager.load("blueBarrel.png", Texture.class);
     }
 
     public static boolean update() {
@@ -38,6 +40,8 @@ public abstract class Assets {
         blueRobot = manager.get("blueTank.png", Texture.class);
         redRobot = manager.get("redTank.png", Texture.class);
         barrel = manager.get("barrel.png", Texture.class);
+        redBarrel = manager.get("redBarrel.png", Texture.class);
+        blueBarrel = manager.get("blueBarrel.png", Texture.class);
     }
 
     public static void dispose() {
@@ -48,6 +52,8 @@ public abstract class Assets {
         redRobot.dispose();
         blueRobot.dispose();
         barrel.dispose();
+        redBarrel.dispose();
+        blueBarrel.dispose();
     }
 
 }

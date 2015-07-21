@@ -12,6 +12,8 @@ public class TeleopRobot extends BaseRobot {
 
     public TeleopRobot(RoboWar game) {
         super(game);
+
+        joinBlueAlliance();
         setTexture(Assets.blueRobot, 0.5f, 1);
 
         drive = new TankDrive(6);
@@ -56,14 +58,8 @@ public class TeleopRobot extends BaseRobot {
             drive.setRightAcc(0);
         }
 
-//        Gdx.app.log("Ultrasonic range:", String.valueOf(forwardUltrasonic.getReading()));
-//        Gdx.app.log("     LIDAR range:", String.valueOf(forwardLIDAR.getReading()));
-        Vector2 vel = getBody().getLinearVelocity();
-        maxx = Math.max(vel.x, maxx);
-        maxy = Math.max(vel.y, maxy);
-        Gdx.app.log("        Velocity:", String.valueOf(getBody().getLinearVelocity()));
-        Gdx.app.log(" maxx", String.valueOf(maxx));
-        Gdx.app.log(" maxy", String.valueOf(maxy));
+//        Gdx.app.log("pos", String.valueOf(getBody().getPosition()));
+//        Gdx.app.log("zone", getAlliance().toString());
 
         super.update();
     }

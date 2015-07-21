@@ -19,12 +19,35 @@ public class Entity {
         return null;
     }
 
+    public void update() {}
+
+    public boolean reapIfDead() {
+        return false;
+    }
+
     public void render(SpriteBatch batch) {
         Body body = getBody();
         sprite.setPosition(body.getPosition().x - sprite.getWidth() / 2, body.getPosition().y - sprite.getHeight() / 2);
         sprite.setRotation(body.getAngle() * MathUtils.radiansToDegrees);
         sprite.draw(batch);
     }
+
+    public SimpleRobot.Alliance currentZone()
+    {
+        if (getBody() == null)
+            return SimpleRobot.Alliance.unset;
+
+        float x = getBody().getPosition().x;
+
+        if (Math.abs(x) < 7f)
+            return SimpleRobot.Alliance.unset;
+
+        if (x > 0)
+            return SimpleRobot.Alliance.blue;
+
+        return SimpleRobot.Alliance.red;
+    }
+
 
     public Sprite getSprite() {
         return sprite;

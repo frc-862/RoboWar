@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -23,12 +24,19 @@ public class RoboWar extends ApplicationAdapter {
     public static Random rand = new Random();
 
     Barrel blueBarrel;
+    Barrel redBarrel;
     Score score;
     World world;
     SpriteBatch batch;
     Box2DDebugRenderer b2dr;
     OrthographicCamera camera;
-    List<BaseRobot> robots;
+    List<Entity> entities;
+    Array<StickyBump> bumps = new Array<>();
+
+    public Array<StickyBump> getBumps() {
+        return bumps;
+    }
+
     float width = Constants.defaultPixelWidth / PPM;
     float height = Constants.defaultPixelHeight / PPM;
     private float timeRemaining;
@@ -79,7 +87,7 @@ public class RoboWar extends ApplicationAdapter {
         world.setContactListener(new CollisionDetect());
         b2dr = new Box2DDebugRenderer();
         camera = new OrthographicCamera();
-        robots = new LinkedList<BaseRobot>();
+        entities = new LinkedList<>();
 
         new Arena(this);
 
@@ -87,33 +95,46 @@ public class RoboWar extends ApplicationAdapter {
         Assets.set();
 
         for (int i = 0; i < robotCount; ++i)
-            robots.add(new SimpleRobot(this));
-        robots.add(new TeleopRobot(this));
-        blueBarrel = new Barrel(this, 0, 0);
+            entities.add(new SimpleRobot(this));
+        entities.add(new TeleopRobot(this));
+
+        blueBarrel = new Barrel(this, 9, 0);
+        blueBarrel.joinBlueAlliance();
+        entities.add(blueBarrel);
+
+        redBarrel = new Barrel(this, -9, 0);
+        redBarrel.joinRedAlliance();
+        entities.add(redBarrel);
+    }
+
+    public List<Entity> getEntities() {
+        return entities;
     }
 
     public void update() {
         timeRemaining -= Gdx.graphics.getDeltaTime();
-
-        for (BaseRobot r : robots) {
-            r.update();
-        }
-        blueBarrel.update();
+        entities.forEach((e) -> e.update());
 
         if (!world.isLocked()) {
-            Iterator<BaseRobot> iter = robots.iterator();
+            Iterator<Entity> iter = entities.iterator();
             while (iter.hasNext()) {
                 if (iter.next().reapIfDead()) {
                     iter.remove();
                 }
             }
 
-            if (robots.isEmpty()) {
+            if (entities.isEmpty()) {
                 Gdx.app.exit();
             }
         }
         world.step(1 / 60f, 6, 2);
 
+        Iterator<StickyBump> iter = bumps.iterator();
+        while (iter.hasNext())
+        {
+            iter.next().process(world);
+            iter.remove();
+        }
     }
 
     @Override
@@ -128,10 +149,7 @@ public class RoboWar extends ApplicationAdapter {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         batch.draw(Assets.gameField, -Constants.width / 2, -Constants.height / 2, Constants.width, Constants.height);
-        for (BaseRobot robot : robots) {
-            robot.render(batch);
-        }
-        blueBarrel.render(batch);
+        entities.forEach((e) -> e.render(batch));
         batch.end();
         score.render(batch);
 

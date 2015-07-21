@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class RobotDefinition {
+    public BaseRobot.Alliance alliance;
+
     public List<RobotFeature> features = new LinkedList<>();
     public float weightLimit = 120;
     public float cash = 4000;
@@ -24,7 +26,16 @@ public class RobotDefinition {
 
     public RobotDefinition(RoboWar game) {
         this.game = game;
+        alliance = BaseRobot.Alliance.unset;
+
         body = null;
+    }
+
+    public void joinBlueAlliance() { alliance = BaseRobot.Alliance.blue; }
+    public void joinRedAlliance() { alliance = BaseRobot.Alliance.red; }
+
+    public BaseRobot.Alliance getAlliance() {
+        return alliance;
     }
 
     public RoboWar getGame() {

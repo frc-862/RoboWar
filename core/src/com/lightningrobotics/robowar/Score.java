@@ -28,6 +28,23 @@ public class Score {
         this.blueScore = blueScore;
     }
 
+    public void incrementScore(BaseRobot.Alliance alliance, int deltaScore)
+    {
+        switch (alliance)
+        {
+            case blue:
+                blueScore += deltaScore;
+                break;
+
+            case red:
+                redScore += deltaScore;
+                break;
+
+            default:
+                // do nothing, you have to pick a side
+        }
+    }
+
     public Score(RoboWar game)
     {
         this.game = game;
@@ -41,15 +58,13 @@ public class Score {
 
     }
 
-
     public void resize(int width, int height) {
         fontCamera.viewportWidth = width;
         fontCamera.viewportHeight = height;
     }
 
-    public void render(Batch batch)
-    {
-        int remainingSeconds = Math.max(game.remainingSeconds(),0);
+    public void render(Batch batch) {
+        int remainingSeconds = Math.max(game.remainingSeconds(), 0);
         int remainingMinutes = Math.floorDiv(remainingSeconds, 60);
         remainingSeconds -= remainingMinutes * 60;
 
@@ -59,9 +74,8 @@ public class Score {
         batch.setProjectionMatrix(fontCamera.combined);
         batch.begin();
         font.draw(batch, String.format("Time: %d:%02d", remainingMinutes, remainingSeconds), 400, -300);
-        font.draw(batch, "Red Alliance: 0", 400, -320);
-        font.draw(batch, "Blue Alliance: 0", 400, -340);
+        font.draw(batch, String.format("Red Alliance: %d", getRedScore()), 400, -320);
+        font.draw(batch, String.format("Blue Alliance: %d", getBlueScore()), 400, -340);
         batch.end();
     }
-
 }
