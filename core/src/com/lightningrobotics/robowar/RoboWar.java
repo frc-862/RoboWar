@@ -96,6 +96,8 @@ public class RoboWar extends ApplicationAdapter {
 
         for (int i = 0; i < robotCount; ++i)
             entities.add(new SimpleRobot(this));
+
+        entities.add(new Pacer(this));
         entities.add(new TeleopRobot(this));
 
         blueBarrel = new Barrel(this, 9, 0);

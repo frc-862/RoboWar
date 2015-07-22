@@ -11,7 +11,7 @@ public class SimpleRobot extends BaseRobot {
         drive = new TankDrive(2);
         addFeature(drive);
 
-        frontSensor = new Ultrasonic(Ultrasonic.Direction.FRONT);
+        frontSensor = new Ultrasonic(Direction.FRONT);
         addFeature(frontSensor);
 
         featureComplete();

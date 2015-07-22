@@ -3,8 +3,8 @@ package com.lightningrobotics.robowar;
 import com.badlogic.gdx.physics.box2d.Body;
 
 public class RobotFeature {
-    private float cost;
-    private float weight;
+    private final float cost;
+    private final float weight;
 
     public RobotFeature(float _cost, float _weight) {
         cost = _cost;
@@ -20,7 +20,7 @@ public class RobotFeature {
     public void update(RobotDefinition def) {
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "EmptyMethod"})
     public void buildBody(Body body) {
 //        Fixture fixture = body.getFixtureList().get(0);
 //        fixture.setDensity(5f);

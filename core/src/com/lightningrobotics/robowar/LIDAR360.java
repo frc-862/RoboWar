@@ -7,20 +7,21 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
 
-public class Ultrasonic extends RobotFeature {
-    private final float sweep = (float) Math.toRadians((double) 30f);
+public class LIDAR360 extends RobotFeature {
+    private final int slices = 360;
+    private final float sweep = (float) Math.toRadians((double) 360f);
+
     private RayCastCallback callback;
     private Vector2 sensorDirection = new Vector2();
     private Vector2 sensorBegin = new Vector2();
     private Vector2 sensorEnd = new Vector2();
     private float sensorMaxRange;
-    private Body body;
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
     private float reading;
-    private Fixture target;
+    private float points[] = new float[slices];
 
-    public Ultrasonic(Direction dir) {
+    public LIDAR360(Direction dir) {
         super(0, 0);
         shapeRenderer = new ShapeRenderer();
         sensorMaxRange = 30;
@@ -48,7 +49,6 @@ public class Ultrasonic extends RobotFeature {
             public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
                 reading = fraction * sensorMaxRange;
                 sensorEnd.set(point);
-                target = fixture;
                 return 0;
             }
         };
@@ -56,7 +56,6 @@ public class Ultrasonic extends RobotFeature {
 
     @Override
     public boolean attachToRobot(RobotDefinition def) {
-        body = def.getBody();
         return super.attachToRobot(def);
     }
 
@@ -66,11 +65,9 @@ public class Ultrasonic extends RobotFeature {
         World world = body.getWorld();
 
         reading = -1;
-        target = null;
 
         sensorBegin.set(body.getPosition());
 
-        float[] points = new float[30];
         float angle = sweep / -2;
         float sweepDelta = sweep / points.length;
 
@@ -98,7 +95,8 @@ public class Ultrasonic extends RobotFeature {
         return sensorMaxRange;
     }
 
-    public float getReading() {
-        return reading;
+    public float[] getReading() {
+        return points;
     }
 }
+

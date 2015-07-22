@@ -95,23 +95,18 @@ public class BaseRobot extends Entity implements ContactListener {
         Object o1 = b1.getUserData();
         Object o2 = b2.getUserData();
 
-        if (isJoined()) {
-            StickyBump sb = new StickyBump(this);
-            robotDefinition.getGame().getBumps().add(sb);
-        } else {
-            if (canJoin()) {
-                if (o1 instanceof Barrel && o2 instanceof BaseRobot) {
-                    Barrel b = (Barrel) o1;
-                    if (b.getAlliance() != getAlliance()) {
-                        StickyBump sb = new StickyBump((BaseRobot) o2, (Barrel) o1);
-                        robotDefinition.getGame().getBumps().add(sb);
-                    }
-                } else if (o1 instanceof BaseRobot && o2 instanceof Barrel) {
-                    Barrel b = (Barrel) o2;
-                    if (b.getAlliance() != getAlliance()) {
-                        StickyBump sb = new StickyBump((BaseRobot) o1, (Barrel) o2);
-                        robotDefinition.getGame().getBumps().add(sb);
-                    }
+        if (!isJoined() && canJoin()) {
+            if (o1 instanceof Barrel && o2 instanceof BaseRobot) {
+                Barrel b = (Barrel) o1;
+                if (b.getAlliance() != getAlliance()) {
+                    StickyBump sb = new StickyBump((BaseRobot) o2, (Barrel) o1);
+                    robotDefinition.getGame().getBumps().add(sb);
+                }
+            } else if (o1 instanceof BaseRobot && o2 instanceof Barrel) {
+                Barrel b = (Barrel) o2;
+                if (b.getAlliance() != getAlliance()) {
+                    StickyBump sb = new StickyBump((BaseRobot) o1, (Barrel) o2);
+                    robotDefinition.getGame().getBumps().add(sb);
                 }
             }
         }
@@ -127,10 +122,14 @@ public class BaseRobot extends Entity implements ContactListener {
 
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {
-//        for (float ni : impulse.getNormalImpulses()) {
-//            Gdx.app.log("   normal", String.valueOf(ni));
-            // robotDefinition.damage(ni * 3);
-//        }
+        for (float ni : impulse.getNormalImpulses()) {
+            if (Math.abs(ni) >= 1 && isJoined()) {
+                Gdx.app.log("   normal", String.valueOf(ni));
+                StickyBump sb = new StickyBump(this);
+                robotDefinition.getGame().getBumps().add(sb);
+            }
+//             robotDefinition.damage(ni * 3);
+        }
     }
 
     public void damage(float v) {
