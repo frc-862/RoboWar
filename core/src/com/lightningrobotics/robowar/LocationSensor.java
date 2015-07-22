@@ -3,7 +3,7 @@ package com.lightningrobotics.robowar;
 import com.badlogic.gdx.math.Vector2;
 
 public class LocationSensor extends RobotFeature {
-    Vector2 location;
+    private Vector2 location;
 
     public LocationSensor() {
         super(0, 0);

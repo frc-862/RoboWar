@@ -1,21 +1,25 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
 
 public class Barrel extends Entity {
-    BaseRobot.Alliance alliance;
-    RoboWar game;
-    Body body;
+    private BaseRobot.Alliance alliance;
+    private RoboWar game;
+    private Body body;
+    private boolean captureBonus = false;
+    private boolean eogBonus = false;
 
-    public Barrel(RoboWar game, float x, float y)
-    {
+    public Barrel(RoboWar game, float x, float y) {
         setTexture(Assets.barrel, 0.5f, 0.5f);
         this.game = game;
-        body = buildBody(x,y);
+        body = buildBody(x, y);
         alliance = BaseRobot.Alliance.unset;
     }
 
-    public BaseRobot.Alliance otherAlliance() {
+    private BaseRobot.Alliance otherAlliance() {
         if (getAlliance() == BaseRobot.Alliance.blue)
             return BaseRobot.Alliance.red;
 
@@ -36,17 +40,13 @@ public class Barrel extends Entity {
         setTexture(Assets.blueBarrel, 0.5f, 0.5f);
     }
 
-    public RoboWar getGame() {
+    private RoboWar getGame() {
         return game;
     }
 
-    boolean captureBonus = false;
-    boolean eogBonus = false;
     public void update() {
-        if (!captureBonus)
-        {
-            if (currentZone() != alliance && currentZone() != BaseRobot.Alliance.unset)
-            {
+        if (!captureBonus) {
+            if (currentZone() != alliance && currentZone() != BaseRobot.Alliance.unset) {
                 captureBonus = true;
                 getGame().getScore().incrementScore(otherAlliance(), 25);
             }
@@ -60,7 +60,7 @@ public class Barrel extends Entity {
         }
     }
 
-    public Body buildBody(float x, float y) {
+    private Body buildBody(float x, float y) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.position.set(x, y);

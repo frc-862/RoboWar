@@ -1,18 +1,29 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 public class Score {
-    RoboWar game;
-    OrthographicCamera fontCamera;
-    BitmapFont font;
-    int redScore;
-    int blueScore;
+    private RoboWar game;
+    private OrthographicCamera fontCamera;
+    private BitmapFont font;
+    private int redScore;
+    private int blueScore;
 
-    public int getRedScore() {
+    public Score(RoboWar game) {
+        this.game = game;
+
+        fontCamera = new OrthographicCamera();
+        font = new BitmapFont();
+        font.setColor(0, 0, 0, 1f);
+
+        redScore = 0;
+        blueScore = 0;
+
+    }
+
+    private int getRedScore() {
         return redScore;
     }
 
@@ -20,7 +31,7 @@ public class Score {
         this.redScore = redScore;
     }
 
-    public int getBlueScore() {
+    private int getBlueScore() {
         return blueScore;
     }
 
@@ -28,10 +39,8 @@ public class Score {
         this.blueScore = blueScore;
     }
 
-    public void incrementScore(BaseRobot.Alliance alliance, int deltaScore)
-    {
-        switch (alliance)
-        {
+    public void incrementScore(BaseRobot.Alliance alliance, int deltaScore) {
+        switch (alliance) {
             case blue:
                 blueScore += deltaScore;
                 break;
@@ -43,19 +52,6 @@ public class Score {
             default:
                 // do nothing, you have to pick a side
         }
-    }
-
-    public Score(RoboWar game)
-    {
-        this.game = game;
-
-        fontCamera = new OrthographicCamera();
-        font = new BitmapFont();
-        font.setColor(0,0,0,1f);
-
-        redScore = 0;
-        blueScore = 0;
-
     }
 
     public void resize(int width, int height) {

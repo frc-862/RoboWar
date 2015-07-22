@@ -18,29 +18,27 @@ import java.util.Random;
 
 import static com.lightningrobotics.robowar.Constants.PPM;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class RoboWar extends ApplicationAdapter {
-    private final int gameSeconds = 60 * 3;
-    private final int robotCount = 0;
+    final int gameSeconds = 60 * 3;
     public static Random rand = new Random();
 
-    Barrel blueBarrel;
-    Barrel redBarrel;
-    Score score;
-    World world;
-    SpriteBatch batch;
-    Box2DDebugRenderer b2dr;
-    OrthographicCamera camera;
-    List<Entity> entities;
-    Array<StickyBump> bumps = new Array<>();
+    private Barrel blueBarrel;
+    private Barrel redBarrel;
+    private Score score;
+    private World world;
+    private SpriteBatch batch;
+    private Box2DDebugRenderer b2dr;
+    private OrthographicCamera camera;
+    private List<Entity> entities;
+    private Array<StickyBump> bumps = new Array<>();
+    private float width = Constants.defaultPixelWidth / PPM;
+    private float height = Constants.defaultPixelHeight / PPM;
+    private float timeRemaining;
 
     public Array<StickyBump> getBumps() {
         return bumps;
     }
-
-    float width = Constants.defaultPixelWidth / PPM;
-    float height = Constants.defaultPixelHeight / PPM;
-    private float timeRemaining;
-    private boolean DEBUG = false;
 
     public Score getScore() {
         return score;
@@ -94,6 +92,7 @@ public class RoboWar extends ApplicationAdapter {
         Assets.manager.finishLoading();
         Assets.set();
 
+        int robotCount = 0;
         for (int i = 0; i < robotCount; ++i)
             entities.add(new SimpleRobot(this));
 
@@ -113,7 +112,7 @@ public class RoboWar extends ApplicationAdapter {
         return entities;
     }
 
-    public void update() {
+    private void update() {
         timeRemaining -= Gdx.graphics.getDeltaTime();
         entities.forEach((e) -> e.update());
 
@@ -132,8 +131,7 @@ public class RoboWar extends ApplicationAdapter {
         world.step(1 / 60f, 6, 2);
 
         Iterator<StickyBump> iter = bumps.iterator();
-        while (iter.hasNext())
-        {
+        while (iter.hasNext()) {
             iter.next().process(world);
             iter.remove();
         }
@@ -158,6 +156,7 @@ public class RoboWar extends ApplicationAdapter {
         if (remainingSeconds() >= 0)
             update();
 
+        boolean DEBUG = false;
         if (DEBUG)
             b2dr.render(world, camera.combined);
     }

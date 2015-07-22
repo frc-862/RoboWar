@@ -1,9 +1,8 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-
 public class Pacer extends FullFeaturedRobot {
+
+    private State state = State.rotate2blue;
 
     public Pacer(RoboWar game) {
         super(game);
@@ -14,8 +13,7 @@ public class Pacer extends FullFeaturedRobot {
         featureComplete();
     }
 
-    public boolean rotate(float desired)
-    {
+    private boolean rotate(float desired) {
         float tolerance = 5;
         float coff = 0.005f;
 
@@ -24,8 +22,7 @@ public class Pacer extends FullFeaturedRobot {
         if (offset > 180) offset -= 360;
         if (offset < -180) offset += 360;
 
-        if (Math.abs(offset) <= tolerance)
-        {
+        if (Math.abs(offset) <= tolerance) {
             getDrive().setLeftAcc(0);
             getDrive().setRightAcc(0);
             return true;
@@ -35,9 +32,6 @@ public class Pacer extends FullFeaturedRobot {
         getDrive().setRightAcc(offset * coff);
         return false;
     }
-
-    enum State { rotate2blue, red2blue, rotate2red, blue2red };
-    State state = State.rotate2blue;
 
     @Override
     public void update() {
@@ -70,4 +64,6 @@ public class Pacer extends FullFeaturedRobot {
 
         super.update();
     }
+
+    enum State {rotate2blue, red2blue, rotate2red, blue2red}
 }

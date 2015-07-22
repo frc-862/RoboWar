@@ -6,7 +6,7 @@ public class RobotFeature {
     private final float cost;
     private final float weight;
 
-    public RobotFeature(float _cost, float _weight) {
+    RobotFeature(float _cost, float _weight) {
         cost = _cost;
         weight = _weight;
     }

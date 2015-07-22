@@ -1,37 +1,6 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-
 public class FullFeaturedRobot extends BaseRobot {
-    public TankDrive getDrive() {
-        return drive;
-    }
-
-    public LaserWeapon getLaser() {
-        return laser;
-    }
-
-    public Ultrasonic getForwardUltrasonic() {
-        return forwardUltrasonic;
-    }
-
-    public LIDAR getForwardLIDAR() {
-        return forwardLIDAR;
-    }
-
-    public Gyroscope getGyro() {
-        return gyro;
-    }
-
-    public BumpSensor getFrontBump() {
-        return frontBump;
-    }
-
-    public LocationSensor getLocation() {
-        return location;
-    }
-
     TankDrive drive;
     LaserWeapon laser;
     Ultrasonic forwardUltrasonic;
@@ -66,6 +35,34 @@ public class FullFeaturedRobot extends BaseRobot {
 
         location = new LocationSensor();
         addFeature(location);
+    }
+
+    public TankDrive getDrive() {
+        return drive;
+    }
+
+    public LaserWeapon getLaser() {
+        return laser;
+    }
+
+    public Ultrasonic getForwardUltrasonic() {
+        return forwardUltrasonic;
+    }
+
+    public LIDAR getForwardLIDAR() {
+        return forwardLIDAR;
+    }
+
+    public Gyroscope getGyro() {
+        return gyro;
+    }
+
+    public BumpSensor getFrontBump() {
+        return frontBump;
+    }
+
+    public LocationSensor getLocation() {
+        return location;
     }
 
 }

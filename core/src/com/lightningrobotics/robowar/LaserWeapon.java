@@ -16,7 +16,6 @@ public class LaserWeapon extends RobotFeature {
     private Vector2 sensorBegin = new Vector2();
     private Vector2 sensorEnd = new Vector2();
     private float sensorMaxRange;
-    private Body body;
     private ShapeRenderer shapeRenderer;
     private float headingOffset;
     private boolean on;
@@ -60,7 +59,7 @@ public class LaserWeapon extends RobotFeature {
 
     @Override
     public boolean attachToRobot(RobotDefinition def) {
-        body = def.getBody();
+        Body body = def.getBody();
         return super.attachToRobot(def);
     }
 

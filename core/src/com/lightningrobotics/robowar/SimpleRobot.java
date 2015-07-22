@@ -1,9 +1,9 @@
 package com.lightningrobotics.robowar;
 
 public class SimpleRobot extends BaseRobot {
-    TankDrive drive;
-    Ultrasonic frontSensor;
-    int counter = 0;
+    private TankDrive drive;
+    private Ultrasonic frontSensor;
+    private int counter = 0;
 
     public SimpleRobot(RoboWar game) {
         super(game);

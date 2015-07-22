@@ -4,11 +4,11 @@ import com.badlogic.gdx.physics.box2d.*;
 
 import java.util.function.Consumer;
 
-public class CollisionDetect implements ContactListener {
+class CollisionDetect implements ContactListener {
     private void tryContact(Object o, Consumer<ContactListener> op) {
-       if (o != null && o instanceof ContactListener) {
-           op.accept((ContactListener) o);
-       }
+        if (o != null && o instanceof ContactListener) {
+            op.accept((ContactListener) o);
+        }
     }
 
     private void tryAll(Contact contact, Consumer<ContactListener> op) {

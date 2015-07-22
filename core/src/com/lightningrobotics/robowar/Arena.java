@@ -5,7 +5,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 
 public class Arena {
-    private final Body body;
 
     public Arena(RoboWar game) {
         final float height = game.getHeight();
@@ -24,10 +23,10 @@ public class Arena {
 //        buildWall(game, 0, height / 2 - wallHeight - 0.1f, wallHeight, 0.1f);
 //        buildWall(game, 0, -height / 2 + wallHeight + 0.1f, wallHeight, 0.1f);
 
-        body = null;
+        Body body = null;
     }
 
-    public Body buildWall(RoboWar game, float x, float y, float h, float w) {
+    private Body buildWall(RoboWar game, float x, float y, float h, float w) {
         BodyDef wall = new BodyDef();
         wall.type = BodyDef.BodyType.StaticBody;
         wall.position.set(x, y);

@@ -31,8 +31,13 @@ public class RobotDefinition {
         body = null;
     }
 
-    public void joinBlueAlliance() { alliance = BaseRobot.Alliance.blue; }
-    public void joinRedAlliance() { alliance = BaseRobot.Alliance.red; }
+    public void joinBlueAlliance() {
+        alliance = BaseRobot.Alliance.blue;
+    }
+
+    public void joinRedAlliance() {
+        alliance = BaseRobot.Alliance.red;
+    }
 
     public BaseRobot.Alliance getAlliance() {
         return alliance;

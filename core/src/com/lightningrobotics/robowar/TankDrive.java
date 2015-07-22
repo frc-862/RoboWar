@@ -1,6 +1,5 @@
 package com.lightningrobotics.robowar;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -12,6 +11,7 @@ public class TankDrive extends RobotFeature {
     private Vector2 accel = new Vector2();
     private Vector2 forceLocation = new Vector2();
     private Vector2 tmp = new Vector2();
+
     public TankDrive(int motors) {
         super(100f * fixMotorCount(motors), 10f * fixMotorCount(motors));
         motorCount = fixMotorCount(motors);
@@ -51,12 +51,12 @@ public class TankDrive extends RobotFeature {
         updateFriction(def.getBody());
     }
 
-    Vector2 getLateralVelocity(Body body) {
+    private Vector2 getLateralVelocity(Body body) {
         Vector2 currentRightNormal = body.getWorldVector(tmp.set(1, 0));
         return currentRightNormal.scl(currentRightNormal.dot(body.getLinearVelocity()));
     }
 
-    void updateFriction(Body body) {
+    private void updateFriction(Body body) {
         Vector2 impulse = getLateralVelocity(body).scl(-body.getMass() * 0.02f);
         body.applyLinearImpulse(impulse, body.getWorldCenter(), true);
     }

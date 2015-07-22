@@ -6,20 +6,20 @@ import com.badlogic.gdx.physics.box2d.joints.WeldJoint;
 import com.badlogic.gdx.physics.box2d.joints.WeldJointDef;
 
 public class BaseRobot extends Entity implements ContactListener {
-    enum Alliance { unset, red, blue };
+    private RobotDefinition robotDefinition;
+    private WeldJoint barrelJoint;
+    private long lastJoin = -3000;
+    private int barrelBonus = 0;
+    private Alliance lastZone = Alliance.unset;
 
-    RobotDefinition robotDefinition;
-    WeldJoint barrelJoint;
-    long lastJoin = -3000;
-
-    public BaseRobot(RoboWar game) {
+    BaseRobot(RoboWar game) {
         this(game, 0, 0);
         barrelJoint = null;
         setTexture(Assets.tank, 0.5f, 1f);
 //        setRegion(Assets.tank);
     }
 
-    public BaseRobot(RoboWar game, float x, float y) {
+    private BaseRobot(RoboWar game, float x, float y) {
         robotDefinition = new RobotDefinition(game);
     }
 
@@ -27,7 +27,7 @@ public class BaseRobot extends Entity implements ContactListener {
         return robotDefinition.getBody();
     }
 
-    public boolean isAlive() {
+    private boolean isAlive() {
         return robotDefinition.isAlive();
     }
 
@@ -39,7 +39,7 @@ public class BaseRobot extends Entity implements ContactListener {
         return false;
     }
 
-    public void featureComplete() {
+    void featureComplete() {
         float x = RoboWar.rand.nextFloat() * Constants.width - Constants.width / 2;
         float y = RoboWar.rand.nextFloat() * Constants.height - Constants.height / 2;
 
@@ -47,28 +47,22 @@ public class BaseRobot extends Entity implements ContactListener {
         body.setUserData(this);
     }
 
-    private int barrelBonus = 0;
-    private Alliance lastZone = Alliance.unset;
-    public int score() {
+    private int score() {
         int increment = 0;
 
-        if (isJoined())
-        {
+        if (isJoined()) {
             long seconds = millisecondsJoined() / 1000;
 
             if (seconds > barrelBonus) {
                 increment = 1;
                 barrelBonus += 1;
             }
-        }
-        else
-        {
+        } else {
             barrelBonus = 0;
         }
 
         Alliance currentZone = currentZone();
-        if (currentZone != Alliance.unset)
-        {
+        if (currentZone != Alliance.unset) {
             if (lastZone != Alliance.unset && lastZone != currentZone)
                 increment += 2;
             lastZone = currentZone;
@@ -82,7 +76,7 @@ public class BaseRobot extends Entity implements ContactListener {
         robotDefinition.getGame().getScore().incrementScore(getAlliance(), score());
     }
 
-    public void addFeature(RobotFeature feature) {
+    void addFeature(RobotFeature feature) {
         robotDefinition.addFeature(feature);
     }
 
@@ -136,13 +130,11 @@ public class BaseRobot extends Entity implements ContactListener {
         robotDefinition.damage(v);
     }
 
-    public boolean canJoin()
-    {
+    private boolean canJoin() {
         return !isJoined() && (System.currentTimeMillis() - lastJoin > 3000);
     }
 
-    public void join(Barrel b)
-    {
+    public void join(Barrel b) {
         lastJoin = System.currentTimeMillis();
 
         WeldJointDef wd = new WeldJointDef();
@@ -156,11 +148,11 @@ public class BaseRobot extends Entity implements ContactListener {
         return barrelJoint != null;
     }
 
-    public long getLastJoin() {
+    private long getLastJoin() {
         return lastJoin;
     }
 
-    public long millisecondsJoined() {
+    private long millisecondsJoined() {
         if (isJoined())
             return System.currentTimeMillis() - getLastJoin();
 
@@ -177,16 +169,18 @@ public class BaseRobot extends Entity implements ContactListener {
         b.getBody().applyForce(RoboWar.rand.nextFloat(), RoboWar.rand.nextFloat(), 0, 0, true);
     }
 
-    public void joinBlueAlliance() {
+    void joinBlueAlliance() {
         robotDefinition.joinBlueAlliance();
     }
 
-    public void joinRedAlliance() {
+    void joinRedAlliance() {
         robotDefinition.joinRedAlliance();
     }
 
-    public Alliance getAlliance() {
+    private Alliance getAlliance() {
         return robotDefinition.getAlliance();
     }
+
+    enum Alliance {unset, red, blue}
 }
 
