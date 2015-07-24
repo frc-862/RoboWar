@@ -5,6 +5,8 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class BumpSensor extends RobotFeature implements ContactListener {
     private Direction direction;
+    private RobotDefinition robotDefinition;
+
     private boolean bumpped;
 
     public BumpSensor(Direction direction) {
@@ -15,26 +17,27 @@ public class BumpSensor extends RobotFeature implements ContactListener {
 
     @Override
     public boolean attachToRobot(RobotDefinition def) {
+        robotDefinition = def;
         return true;
     }
 
     @Override
     public void buildBody(Body body) {
         CircleShape bumpShape = new CircleShape();
-        bumpShape.setRadius(0.01f);
+        bumpShape.setRadius(0.0001f);
 
         switch (direction) {
             case FRONT:
-                bumpShape.setPosition(new Vector2(0f, 0.5f));
+                bumpShape.setPosition(new Vector2(0f, 0.51f));
                 break;
             case BACK:
-                bumpShape.setPosition(new Vector2(0f, -0.5f));
+                bumpShape.setPosition(new Vector2(0f, -0.51f));
                 break;
             case LEFT:
-                bumpShape.setPosition(new Vector2(-0.25f, 0f));
+                bumpShape.setPosition(new Vector2(-0.26f, 0f));
                 break;
             case RIGHT:
-                bumpShape.setPosition(new Vector2(0.25f, 0f));
+                bumpShape.setPosition(new Vector2(0.26f, 0f));
                 break;
         }
 
@@ -57,6 +60,7 @@ public class BumpSensor extends RobotFeature implements ContactListener {
     @Override
     public void beginContact(Contact contact) {
         bumpped = true;
+
     }
 
     @Override

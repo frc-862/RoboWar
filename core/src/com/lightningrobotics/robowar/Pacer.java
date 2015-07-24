@@ -44,8 +44,13 @@ public class Pacer extends FullFeaturedRobot {
                 if (currentZone() == Alliance.blue) {
                     state = State.rotate2red;
                 } else {
-                    getDrive().setLeftAcc(1);
-                    getDrive().setRightAcc(1);
+                    if (getLocation().getReading().x < 5) {
+                        getDrive().setLeftAcc(1);
+                        getDrive().setRightAcc(1);
+                    } else {
+                        getDrive().setLeftAcc(0.25f);
+                        getDrive().setRightAcc(0.25f);
+                    }
                 }
                 break;
             case rotate2red:
@@ -56,8 +61,13 @@ public class Pacer extends FullFeaturedRobot {
                 if (currentZone() == Alliance.red) {
                     state = State.rotate2blue;
                 } else {
-                    getDrive().setLeftAcc(1);
-                    getDrive().setRightAcc(1);
+                    if (getLocation().getReading().x > -5) {
+                        getDrive().setLeftAcc(1);
+                        getDrive().setRightAcc(1);
+                    } else {
+                        getDrive().setLeftAcc(0.25f);
+                        getDrive().setRightAcc(0.25f);
+                    }
                 }
                 break;
         }

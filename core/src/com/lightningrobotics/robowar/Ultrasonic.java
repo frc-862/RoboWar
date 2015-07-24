@@ -45,6 +45,8 @@ public class Ultrasonic extends RobotFeature {
         callback = new RayCastCallback() {
             @Override
             public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
+                if (fixture.isSensor()) return 1;
+
                 reading = fraction * sensorMaxRange;
                 sensorEnd.set(point);
                 target = fixture;
@@ -84,7 +86,7 @@ public class Ultrasonic extends RobotFeature {
 
             world.rayCast(callback, sensorBegin, sensorEnd);
             points[i] = reading;
-            // shapeRenderer.line(sensorBegin, sensorEnd);
+//            shapeRenderer.line(sensorBegin, sensorEnd);
         }
 
         shapeRenderer.end();

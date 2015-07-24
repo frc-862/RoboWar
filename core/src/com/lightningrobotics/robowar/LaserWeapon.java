@@ -49,6 +49,8 @@ public class LaserWeapon extends RobotFeature {
         callback = new RayCastCallback() {
             @Override
             public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
+                if (fixture.isSensor()) return 1;
+
                 reading = fraction * sensorMaxRange;
                 sensorEnd.set(point);
                 target = fixture;
@@ -92,7 +94,7 @@ public class LaserWeapon extends RobotFeature {
 
             if ((target != null) && (target.getBody().getUserData() instanceof BaseRobot)) {
                 BaseRobot zapped = (BaseRobot) target.getBody().getUserData();
-                zapped.damage(0.1f);
+                zapped.damage(1f);
             }
 
             shapeRenderer.setProjectionMatrix(def.getGame().getCamera().combined);

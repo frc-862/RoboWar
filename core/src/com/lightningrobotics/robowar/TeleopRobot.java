@@ -40,6 +40,9 @@ public class TeleopRobot extends FullFeaturedRobot {
             drive.setRightAcc(0);
         }
 
+        if (frontBump.isBumpped())
+            Gdx.app.log("Teleop", "Get off the wall");
+
         super.update();
     }
 }

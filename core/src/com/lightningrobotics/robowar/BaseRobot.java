@@ -82,7 +82,6 @@ public class BaseRobot extends Entity implements ContactListener {
 
     @Override
     public void beginContact(Contact contact) {
-        Gdx.app.log("BaseRobot", "Bump");
         Body b1 = contact.getFixtureA().getBody();
         Body b2 = contact.getFixtureB().getBody();
 
@@ -93,17 +92,20 @@ public class BaseRobot extends Entity implements ContactListener {
             if (o1 instanceof Barrel && o2 instanceof BaseRobot) {
                 Barrel b = (Barrel) o1;
                 if (b.getAlliance() != getAlliance()) {
-                    StickyBump sb = new StickyBump((BaseRobot) o2, (Barrel) o1);
-                    robotDefinition.getGame().getBumps().add(sb);
+                    grabBarrel(b);
                 }
             } else if (o1 instanceof BaseRobot && o2 instanceof Barrel) {
                 Barrel b = (Barrel) o2;
                 if (b.getAlliance() != getAlliance()) {
-                    StickyBump sb = new StickyBump((BaseRobot) o1, (Barrel) o2);
-                    robotDefinition.getGame().getBumps().add(sb);
+                    grabBarrel(b);
                 }
             }
         }
+    }
+
+    public void grabBarrel(Barrel b) {
+        StickyBump sb = new StickyBump(this, b);
+        robotDefinition.getGame().getBumps().add(sb);
     }
 
     @Override
