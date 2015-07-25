@@ -2,7 +2,7 @@ package com.lightningrobotics.robowar.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.lightningrobotics.robowar.RoboWar;
+import com.lightningrobotics.robowar.BarrelBounce;
 import static com.lightningrobotics.robowar.Constants.defaultPixelHeight;
 import static com.lightningrobotics.robowar.Constants.defaultPixelWidth;
 
@@ -14,6 +14,6 @@ public class DesktopLauncher {
 		config.height = defaultPixelHeight;
 		config.backgroundFPS = 60;
 		config.foregroundFPS = 60;
-		new LwjglApplication(new RoboWar(), config);
+		new LwjglApplication(new BarrelBounce(), config);
 	}
 }

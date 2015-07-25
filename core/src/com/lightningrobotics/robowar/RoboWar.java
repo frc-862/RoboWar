@@ -3,6 +3,7 @@ package com.lightningrobotics.robowar;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,7 +20,7 @@ import java.util.Random;
 import static com.lightningrobotics.robowar.Constants.PPM;
 
 @SuppressWarnings("FieldCanBeLocal")
-public class RoboWar extends ApplicationAdapter {
+public class RoboWar implements Screen {
     final int gameSeconds = 60 * 3;
     public static Random rand = new Random();
 
@@ -74,7 +75,7 @@ public class RoboWar extends ApplicationAdapter {
     }
 
     @Override
-    public void create() {
+    public void show() {
         timeRemaining = gameSeconds;
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
@@ -138,7 +139,22 @@ public class RoboWar extends ApplicationAdapter {
     }
 
     @Override
-    public void render() {
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
+    }
+
+    @Override
+    public void render(float delta) {
         camera.position.set(0, 0, 0);
         camera.position.set(0, 0, 0);
         camera.update();

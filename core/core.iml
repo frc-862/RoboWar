@@ -16,5 +16,23 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="Gradle: tween-engine-api-sources">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../libs/tween-engine-api-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="Gradle: tween-engine-api">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../libs/tween-engine-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
