@@ -173,10 +173,12 @@ public class BaseRobot extends Entity implements ContactListener {
 
     void joinBlueAlliance() {
         robotDefinition.joinBlueAlliance();
+        setTexture(Assets.blueRobot, 0.5f, 1);
     }
 
     void joinRedAlliance() {
         robotDefinition.joinRedAlliance();
+        setTexture(Assets.redRobot, 0.5f, 1);
     }
 
     private Alliance getAlliance() {

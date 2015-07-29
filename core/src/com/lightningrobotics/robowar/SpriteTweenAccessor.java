@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class SpriteTweenAccessor implements TweenAccessor<Sprite> {
-    public enum Mode {SCALE, ALPHA, POSITION };
+    public enum Mode {SCALE, ALPHA, POSITION, ROTATION };
 
     @Override
     public int getValues(Sprite sprite, int i, float[] floats) {
@@ -22,6 +22,10 @@ public class SpriteTweenAccessor implements TweenAccessor<Sprite> {
                 floats[0] = sprite.getX();
                 floats[1] = sprite.getY();
                 return 2;
+
+            case ROTATION:
+                floats[0] = sprite.getRotation();
+                return 1;
 
             default:
                 assert false;
@@ -44,6 +48,10 @@ public class SpriteTweenAccessor implements TweenAccessor<Sprite> {
             case POSITION:
                 sprite.setX(floats[0]);
                 sprite.setY(floats[1]);
+                break;
+
+            case ROTATION:
+                sprite.setRotation(floats[0]);
                 break;
 
             default:

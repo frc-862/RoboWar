@@ -7,10 +7,6 @@ public class TeleopRobot extends FullFeaturedRobot {
 
     public TeleopRobot(RoboWar game) {
         super(game);
-
-        joinBlueAlliance();
-        setTexture(Assets.blueRobot, 0.5f, 1);
-
         featureComplete();
     }
 

@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,6 +24,23 @@ import static com.lightningrobotics.robowar.Constants.PPM;
 public class RoboWar implements Screen {
     final int gameSeconds = 60 * 3;
     public static Random rand = new Random();
+
+    private List<Class<BaseRobot>> redAlliance;
+    private List<Class<BaseRobot>> blueAlliance;
+
+    public RoboWar() {
+        super();
+        blueAlliance = new LinkedList<>();
+        redAlliance = new LinkedList<>();
+    }
+
+    public void joinBlueAlliance(Class<BaseRobot> r) {
+        blueAlliance.add(r);
+    }
+
+    public void joinRedAlliance(Class<BaseRobot> r) {
+        redAlliance.add(r);
+    }
 
     private Barrel blueBarrel;
     private Barrel redBarrel;
@@ -90,15 +108,44 @@ public class RoboWar implements Screen {
 
         new Arena(this);
 
-        Assets.manager.finishLoading();
-        Assets.set();
-
         int robotCount = 0;
         for (int i = 0; i < robotCount; ++i)
             entities.add(new SimpleRobot(this));
 
-        entities.add(new Pacer(this));
-        entities.add(new TeleopRobot(this));
+//        entities.add(new Pacer(this));
+//        entities.add(new TeleopRobot(this));
+
+        for (Class<BaseRobot> Robot : redAlliance) {
+            try {
+                BaseRobot br = Robot.getConstructor(RoboWar.class).newInstance(this);
+                br.joinRedAlliance();
+                entities.add(br);
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (Class<BaseRobot> Robot : blueAlliance) {
+            try {
+                BaseRobot br = Robot.getConstructor(RoboWar.class).newInstance(this);
+                br.joinBlueAlliance();
+                entities.add(br);
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
 
         blueBarrel = new Barrel(this, 9, 0);
         blueBarrel.joinBlueAlliance();

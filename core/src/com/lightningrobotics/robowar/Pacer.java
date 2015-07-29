@@ -1,3 +1,5 @@
+// Stuff
+
 package com.lightningrobotics.robowar;
 
 public class Pacer extends FullFeaturedRobot {
@@ -6,10 +8,6 @@ public class Pacer extends FullFeaturedRobot {
 
     public Pacer(RoboWar game) {
         super(game);
-
-        joinRedAlliance();
-        setTexture(Assets.redRobot, 0.5f, 1);
-
         featureComplete();
     }
 

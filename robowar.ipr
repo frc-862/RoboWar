@@ -22,6 +22,7 @@
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
             <element id="library" level="module" name="Gradle: tween-engine-api-sources" module-name="core" />
             <element id="library" level="module" name="Gradle: tween-engine-api" module-name="core" />
+            <element id="library" level="module" name="Gradle: InMemoryJavaCompiler-1.2" module-name="core" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
@@ -60,6 +61,7 @@
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
             <element id="library" level="module" name="Gradle: tween-engine-api-sources" module-name="core" />
             <element id="library" level="module" name="Gradle: tween-engine-api" module-name="core" />
+            <element id="library" level="module" name="Gradle: InMemoryJavaCompiler-1.2" module-name="core" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
@@ -98,6 +100,7 @@
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
             <element id="library" level="module" name="Gradle: tween-engine-api-sources" module-name="core" />
             <element id="library" level="module" name="Gradle: tween-engine-api" module-name="core" />
+            <element id="library" level="module" name="Gradle: InMemoryJavaCompiler-1.2" module-name="core" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
@@ -136,6 +139,7 @@
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.6.4" />
             <element id="library" level="module" name="Gradle: tween-engine-api-sources" module-name="core" />
             <element id="library" level="module" name="Gradle: tween-engine-api" module-name="core" />
+            <element id="library" level="module" name="Gradle: InMemoryJavaCompiler-1.2" module-name="core" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx-backend-gwt:1.6.4:sources" />
             <element id="library" level="project" name="Gradle: com.badlogicgames.gdx:gdx:1.6.4:sources" />
